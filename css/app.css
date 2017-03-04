@@ -1,0 +1,792 @@
+
+.boxHelper
+{
+	background-color: #000;
+	color:#fff;
+	text-align:center;
+	font-family: 'Pacifico', cursive;
+	font-family: 'Roboto', sans-serif;
+}
+
+.container{
+	overflow: hidden;
+}
+
+/*donate SCROLLER START*/
+.donateCon{
+	background-color: #3b846e;
+	height: 100px;
+	width: 50px;
+	position: absolute;
+	animation: slide .8s 1;
+	animation-delay: .7s
+}
+.donateTab{
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	transform: rotate(-90deg);
+	color: #fff;
+	font-size: 1em;
+	margin-top:42px;
+}
+.flipOut{
+	position: absolute;
+	background-color: #3b846e;
+	width: 500px;
+	color: #fff;	
+}
+.flipOut button{
+	color: #fff;
+	font-weight: bold;
+}
+.flipOut img{
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+/*donate SCROLLER END*/
+
+
+
+
+/*BOOK SCROLLER START*/
+.bookNowTab{
+	float: left;
+}
+.bookNowCon{
+	background-color: #be2135;
+	height: 90px;
+	width: 50px;
+	position: absolute;
+	animation: slide .8s 1;
+	animation-delay: .5s
+}
+.scrollerText{
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	transform: rotate(-90deg);
+	color: #fff;
+	font-size: 1em
+}
+
+.foldOut{
+	position: absolute;
+	width: 600px;	
+}
+.foldOut button{
+	color: #fff;
+	font-weight: bold;
+}
+@keyframes slide{
+	0%{
+		transform: translate3d(-150px,0px,0px);
+	}
+
+	100%{
+		transform: translate3d(0px,0px,0px);
+
+	}
+}
+.callendar{
+	margin-top: 10px;
+}
+.eventsTab{
+
+	height: 170px;
+	background-color: #808080;
+	position: absolute;
+}
+.eventsTab img{
+	position: absolute;
+	width: 40%;
+	margin-top: 45%;
+	margin-left: -25px;
+/*	width: 20px;
+	height: 20px;*/
+}
+.eventsTab h4{
+	text-align: left;
+	margin-left: 0;
+	margin-top: 5px;
+	font-size: 1.2em;
+}
+.eventsTab p{
+	text-align: left;
+	color: #fff;
+	margin-top: 10px;
+	font-size: .81em;
+}
+.callendarTab{
+	height: 170px;
+	background-color: #b3b3b3;
+	position: absolute;
+}
+.callendarTab h4{
+	margin-top: 5px;
+	color: #808080;
+}
+.callendarTab img{
+	/*margin-top: 20px;*/
+}
+.dateTab{
+	height: 170px;
+	background-color: #e6e6e6;
+	position: absolute;
+	margin-top: 164px; 
+}
+.date{
+	font-weight: bold;
+	margin-top: -20px;
+	color: #808080;
+	font-size: 7em;
+}
+.month{
+	margin-top: -70px;
+	color: #808080;
+	font-weight: bold;
+	float: right;
+	font-size: 1.2em;
+}
+.scheduleTab{
+	height: 170px;
+	background-color: #f2f2f2;
+	float: right;
+	margin-top: 164px;
+}
+.scheduleTab h4{
+	text-align: left;
+	margin-top: 5px;
+	color: #000;
+}
+.scheduleTab p{
+	text-align: left;
+	font-size: .81em;
+	line-height: 2em;
+	margin-top: 15px
+}
+.scheduleTab p a{
+	float: right;
+	background-color: #be2135;
+	color: #fff;
+	padding-left: 3px;
+	padding-right: 3px; 
+	margin-top: 55px;
+}
+.schedDesc{
+	color: #fff;
+}
+
+/*BOOK SCROLLER END*/
+
+
+
+
+
+
+
+
+
+/*STATIC HEADER START*/
+.staticHeader{
+	background-image: url("../img/staticHeader.png");
+	background-size: cover;
+}
+.logo{
+	margin-left: 5px;
+	margin-top: 5px;
+	position: absolute;
+}
+
+.headerContact{
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	display: inline;
+	margin: 0 auto;
+	margin-left: 3%;
+	margin-top: 5px;
+}
+a{
+	color:#000;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+}
+.hamburger{
+	margin-top: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+}
+
+h2{
+	font-family: 'Pacifico', cursive;
+	font-size: 2.5em;
+	padding-top: 45%;
+ 	text-align: center;
+}
+
+.headerButCon{
+	display: block;
+	text-align: center;
+	margin-top:180px;
+	margin-bottom: 100px;
+}
+.headerBut{
+	background-color: #be2135;
+	margin-top: 180px;
+	margin-bottom: 100px; 
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #fff;
+}
+
+button a{
+	color:#fff;
+	text-align: center;
+}
+
+
+@media only screen and (min-width: 640px) {
+    .headerContact{
+    	text-align: right;
+    }
+    h2
+    {
+        font-size: 3rem;
+        padding-top: 35%;
+    }
+    .medUpMainNav
+    {
+		height: 50px;
+		text-align: center;
+		margin-top: 30%;
+		margin-bottom: 15%;
+		margin-right: 25px;
+
+	}
+	.medUpMainNav ul li
+	{
+		display: inline;
+	}
+
+	.medUpMainNav ul li a
+	{
+		padding: 5px;
+		color: #fff;
+		
+	}
+	.border
+	{
+		color: #fff;
+	}
+
+
+	.footerNav ul li a:hover
+	{
+		padding: 5px;
+	}
+}
+@media only screen and (min-width: 1440px){
+	.logo{
+	margin-left: 60px;
+	}
+}
+/*STATIC HEADER END*/
+
+
+
+
+
+
+
+/*HAMBURGER START*/
+.hamburger{
+	margin-top: 5px;
+	float: right;
+	margin-right: 3%;
+}
+#menu{
+	position: absolute;
+	width: 100%;
+	margin-top: 47px;
+	background: rgba(155,194,158,1);
+}
+#mainNav
+{
+    margin: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+
+#mainNav li a
+{
+    font-size: 1em;
+    line-height: 3em;
+}
+
+/*HABURGER END*/
+
+
+
+
+
+
+
+
+
+/*MHS START*/
+.MHS{
+	text-align: center
+}
+h3{
+	font-family: 'Pacifico', cursive;
+	font-size: 1.5em;
+	margin-top: 20px;
+	text-align: center;
+}
+p{
+	font-family: 'Roboto', sans-serif;
+	margin-top: 15px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+@media only screen and (min-width: 640px) {
+	h3{
+		font-size: 2em;
+	}
+}
+/*MHS END*/
+
+
+
+
+
+
+
+
+
+/*Decorative Nautical Pictures START*/
+.decoImg img{
+	padding-left: 12px;
+	padding-right: 12px;
+	margin-bottom: 30px;
+}
+/*Decorative Nautical Pictures END*/
+
+
+
+
+
+
+
+
+
+/*TOURS START*/
+.tourBut{
+	text-align: center;
+	color: #be2135;
+	font-weight: bold;
+}
+.tourBut:hover{
+	color: #3d9278;
+}
+.price{
+	text-align: center;
+	color: #3d9278;
+	font-weight: bold;
+}
+/*TOURS END*/
+
+
+
+
+
+
+
+
+/*OUR HISTORY START*/
+.videoPlaceholder{
+	background-color: #494244;
+	width: 80%;
+	height: 150px;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	text-align:center;
+}
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 640px) {
+	.videoPlaceholder{
+		height: 250px;
+	}
+	.history{
+		background-image: url(../img/woodBG.png);
+		background-size: cover;
+		margin-bottom: 30px;
+	}
+	.videoPlaceholder{
+		height: 300px;
+	}
+}
+@media only screen and (min-width: 940px){
+	.videoPlaceholder{
+		height: 500px;
+	}
+}
+
+/*OUR HISTORY END*/
+
+
+
+
+
+
+
+
+
+
+
+/*BE SURE START*/
+.beSure div{
+	margin-top: 30px;
+}
+.boots{
+	margin-top: 30px;
+}
+.camera{
+	margin-top: 50px;
+}
+.noFlops{
+	text-align: center;
+	color: #3d9278;
+	font-weight: bold;
+	margin-top: 50px;
+}
+@media only screen and (min-width: 421px){
+	.camera{
+		margin-right: 50%;
+	}
+	.jacket{
+		margin-top: -50%;
+	}
+	
+}
+@media only screen and (min-width: 640px){
+	.camera{
+		margin-right: 0;
+		margin-top: 20px;
+	}
+	.jacket{
+		margin-top: -3%;
+	}
+
+}
+
+/*BE SURE END*/
+
+
+
+
+
+
+
+
+
+/*SCHEDULE START*/
+.schedule{
+	max-width: 740px;
+	display: block;
+	margin: 0 auto;
+
+}
+.upcomming{
+	background-color: #808080;
+	height: 200px;
+}
+.upcomming img{
+	width: 50%;
+	margin-top: -40%;
+	margin-left: 5px;
+	float: right;
+}
+.upcomming h4{
+	text-align: left;
+	margin-left: 0;
+	margin-top: 5px;
+	font-size: 1.2em;
+	color: #fff;
+}
+.upcomming p{
+	text-align: left;
+	color: #fff;
+	margin-top: 10px;
+	font-size: .81em;
+}
+.calendar{
+	background-color: #b3b3b3;
+	height: 200px;
+}
+.calendar h4{
+	margin-top: 5px;
+	color: #808080;
+}
+
+.dateBox{
+	background-color: #e6e6e6;
+	height: 200px;
+}
+.scheduleBox{
+	background-color: #f2f2f2;
+	height: 200px;
+}
+.scheduleBox h4{
+	text-align: left;
+	margin-top: 5px;
+	color: #000;
+}
+.scheduleBox p{
+	text-align: left;
+	font-size: .81em;
+	line-height: 2em;
+	margin-top: 15px
+}
+.scheduleBox p a{
+	float: right;
+	background-color: #be2135;
+	color: #fff;
+	padding-left: 3px;
+	padding-right: 3px; 
+	margin-top: 55px;
+}
+
+
+
+@media only screen and (min-width: 500px){
+	.calendar img{
+		max-width: 225px;
+		display: block;
+		margin: 0 auto;
+	}
+	.upcomming img{
+		margin-top: -20%;
+	}
+}
+/*SCHEDULE END*/
+
+
+
+/*CONTACT START*/
+.sendBut{
+	background-color: #be2135;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #fff;
+}
+.formStyle{
+	border-color:#3b846e;
+}
+::-webkit-input-placeholder { 
+  color: #000 !important;
+}
+::-moz-placeholder { 
+  color: #000 !important;
+}
+:-ms-input-placeholder { 
+  color: #000 !important;
+}
+:-moz-placeholder {
+  color: #000 !important;
+}
+
+/*CONTACT END*/
+
+
+
+
+
+
+
+/*PHOTO GALLERY START*/
+/*.gallery, h3{
+	margin-top: 150px;
+}*/
+.arrow{
+	position: absolute;
+	margin-top: 20%;
+}
+.arrowLeft{
+	margin-left: 12%;
+}
+
+.arrowRight{
+	margin-left: 85%
+}
+
+.lbClose{
+	float: right;
+	padding-right: 10px;
+	padding-top: 5px;
+}
+
+.fullImg{
+	padding-left: 3%;
+	padding-right: 3%;
+	padding-top: 5%
+}
+
+.imgDesc{
+	position: absolute;
+}
+
+.lbOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+
+/*PHOTO GALLERY END*/
+
+
+
+
+
+
+
+
+
+
+/*VOLUNTEERS START*/
+.volunteers{
+	display: block;
+	margin: 0 auto;
+}
+.volunteers ul{
+	list-style-type: none;
+	text-align: center;
+}
+.aboutVolunteers img{
+	display: block;
+	margin: 0 auto;
+}
+
+#volIcon{
+	margin-bottom: 2em;
+}
+
+@media only screen and (min-width: 1024px){
+	.aboutVolunteers img{
+		margin-top: 130px;
+	}
+}
+/*VOLUNTEERS END*/
+
+
+
+
+
+
+
+
+/*FOOTER START*/
+
+.footerButCon{
+	display: block;
+	text-align: center;
+}
+.footerBut{
+	background-color: #be2135; 
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-top: 50px;
+}
+.socialMedia{
+	margin-top: 25px;
+}
+
+.footerNav{
+	height: 50px;
+	text-align: center;
+	margin-top: 30px;
+	margin-right: 15px;
+}
+.footerNav ul li{
+	display: inline;
+}
+
+.footerNav ul li a
+{
+	padding: 5px;
+	
+}
+
+
+.footerNav ul li a:hover
+{
+	padding: 5px;
+}
+.footerLogo{
+	display: block;
+	margin: 0 auto;
+	width: 12%;
+}
+.footerImg{
+	position: absolute;
+	margin-top: -100px;
+}
+
+
+
+
+
+@media only screen and (min-width: 640px) {
+	.footer{
+	background-image: url("../img/footer.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	}
+	.footerLogo{
+		margin-bottom: 10%;
+	}
+}
+@media only screen and (min-width: 940px){
+	.footerLogo{
+		margin-bottom: 25%;
+	}
+}
+/*FOOTER END*/
+
+
+
+
+
+
+
+
+
+
+
+
+
