@@ -18,15 +18,16 @@ $(document).foundation();
 	donateTab = document.querySelector(".donateTab"),
 	flipOut = document.querySelector(".flipOut"),
 	closeDonate = document.querySelector(".closeDonate"),
-	imageThunbs = document.querySelectorAll(".thumbButton"),
-	fullImg = document.querySelector(".fullImg"),
-	imgDesc = document.querySelector(".imgDesc"),
-	arrowLeft = document.querySelector('.arrowLeft'),
-	arrowRight = document.querySelector('.arrowRight'),
-	targetImg = 1,
-	overlay = document.querySelector(".lbOverlay"),
-	lightBoxClose = document.querySelector(".lbClose"),
-	httpRequest;
+
+
+	directionsService = new google.maps.DirectionsService(),
+	map = new google.maps.Map(document.querySelector('.mapCon')), 
+	preloader = document.querySelector('.preloadCon'),
+	geocoder = new google.maps.Geocoder(),
+	directionsBut = document.querySelector('.directionsBut'),
+	directionsDisplay,
+	marker,
+	locations = [];
 
 
 
@@ -99,75 +100,71 @@ $(document).foundation();
 		TweenMax.to(donateCon, 1.5, {width:"50px", height:"100px", y:bookHeadSpace/128, transformOrigin: "left top", delay:.2, ease: Power4.easeOut});
 	}
 
-	function getImgPlz(){
-		//console.log("getImgPlz fired");
-		httpRequest = new XMLHttpRequest();
 
-		targetImg=this.id;
 
-		if (!httpRequest) {
-			console.log("no dice");
-		}
+	function initMap(position){
+		locations[0]= {lat: 44.499975, lng: -81.373118};
+		directionsDisplay = new google.maps.DirectionsRenderer();
+		directionsDisplay.setMap(map);
 
-		imgChange();
+		map.setCenter({lat: 44.499975, lng: -81.373118});
+
+		map.setZoom(14);
+
+		marker = new google.maps.Marker({
+			position : {lat: 44.499975, lng: -81.373118},
+			map: map,
+			title: 'hello World!'
+		});
+		preloader.classList.add('hide');
 	}
 
-	function showImgPlz() {
-		console.log("showImgPlz fired");
+	function getAddress(){
+		console.log("getAddress fired")
+		var address = document.querySelector('.address').value;
+		geocoder.geocode({'address': address}, function(results, status){
+			if (status === google.maps.GeocoderStatus.OK){
+				location[1] = {lat: results[0].geometry.location.lat(), lng: results[0].geometry.location.lng() };
+				map.setCenter(results[0].geometry.location);
+				if (marker){
+					marker.setMap(null);
+					marker = new google.maps.Marker({
+						map:map,
+						position: results[0].geometry.location
+					});
 
-		if(httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200){
-			var galData = JSON.parse(httpRequest.responseText);
+				}
 
-			[].forEach.call(document.querySelectorAll('.arrow'), function(item){
-				item.classList.remove('hide');
-			});
-			
-			overlay.classList.remove('hide');
-			lightBoxClose.classList.remove("hide");
+				calcRoute(results[0].geometry.location);
 
-			[].forEach.call(document.querySelectorAll('.fullGal'), function(item){
-				item.classList.remove('hide');
-			});
-			
-
-			fullImg.src = 'img/' + galData.photo_img;
-			// imgDesc.innerHTML = galData.photo_decs;
-		}
-
-	}
-	
-	
-	function imgChange(){
-		httpRequest.onreadystatechange = showImgPlz;
-		httpRequest.open('GET', 'includes/ajaxQuery.php' + '?photo=' + targetImg);
-		httpRequest.send();
-	}
-	
-	function nextPic(){
-
-		targetImg++;
-		imgChange();
-
-	}
-	function lastPic(){
-
-		targetImg--;
-		imgChange();
-
+			} else{
+				console.log('no dice', status);
+			}
+		});
 	}
 
-	function closeLightBox(){
-		[].forEach.call(document.querySelectorAll('.arrow'), function(item){
-				item.classList.add('hide');
-			});
-			
-			overlay.classList.add('hide');
-			lightBoxClose.classList.add("hide");
+	function calcRoute(codeLoc){
+		var request = {
+			origin: locations[0],
+			destination: location[1],
+			travelMode: 'DRIVING'
+		};
 
-			[].forEach.call(document.querySelectorAll('.fullGal'), function(item){
-				item.classList.add('hide');
-			});
+		directionsService.route(request, function(response, status){
+			if(status === 'OK'){
+				directionsDisplay.setDirections(response);
+			}
+		});
+	}
 
+	if(navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(initMap, handleError);
+	} else {
+		console.log("no geolocation for you!");		
+	}
+
+	function handleError(e){
+		console.log(e);
 	}
 
 
@@ -183,13 +180,7 @@ $(document).foundation();
 	donateCon.addEventListener("click", expandDonate, false);
 	closeDonate.addEventListener("click", retractDonate, false);
 
-	[].forEach.call(imageThunbs, function(el){
-		el.addEventListener('click', getImgPlz, false);
-	});
 
-	
-	arrowRight.addEventListener("click", nextPic, false);
-	arrowLeft.addEventListener("click", lastPic, false);
-	lightBoxClose.addEventListener("click", closeLightBox, false);
+	directionsBut. addEventListener('click', getAddress, false);
 	
 	})();

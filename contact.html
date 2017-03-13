@@ -7,7 +7,8 @@
     <title>Chantry Island - Contact</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico%7CRoboto" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1_gGDd-jX-B6Uz-yxixAavUti1pa2g1A"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
 
 <body>
@@ -114,13 +115,22 @@ We will send a tax receipt for all donations $20 and more.</p>
 	<section class="row map">
 	
 	<h3>Map & Directions</h3>
-<iframe class="small-12 medium-6" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2845.7441711090437!2d-81.37573568447459!3d44.499908579101344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8829cfb0979eb8db%3A0x363d0f4d69d8323d!2sChantry+Island+Tours!5e0!3m2!1sen!2sca!4v1486658390008" width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <div class="preloadCon small-12 medium-6 columns">
+        <i class="fa fa-life-bouy fa-4x"></i>
+    </div>
+    <div class="mapCon small-12 medium-6 columns"></div>
+
+
 		<div class="small-12 medium-6 columns">
 			<h3>Address</h3>
 			<p>86 Saugeen St.<br>
-Southampton, Ontario<br>
-Canada N0H 2L0</p>
-		<p>From Highway 21 in Southampton, turn west on Clarendon and follow the signs, or From High Street, (the main street), turn north on Huron or Grosvenor Street and look for the signs.</p>
+      Southampton, Ontario<br>
+      Canada N0H 2L0</p>
+
+    <p class="directions">Need Directions?<br>
+    Tell us your address.</p>
+    <textarea rows="2" cols="2" wrap="hard" type="textbox" class="address" placeholder="Address, city, province"></textarea><br>
+    <button class="directionsBut sendBut">Get Directions</button>
 		</div>
 	</section>
 
