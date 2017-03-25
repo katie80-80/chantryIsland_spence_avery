@@ -54,35 +54,10 @@
   </form>
 
 
-<footer class="footer row">
+<?php
+  include("../includes/adminFooter.html");
+?>
 
-    <div class="socialMedia row">
-    <a href="https://www.facebook.com/MarineHeritageSociety/?fref=ts"><img class="small-2 small-push-2 medium-1 medium-push-4 columns" src="../img/facebook.jpg" alt="facebook"></a>
-    <a href="https://www.youtube.com/channel/UC5BwiLq9hSIl9BZRq7Q4UNA"><img class="small-2 small-push-2 medium-1 medium-push-4 columns" src="../img/youtube.jpg" alt="youtube"></a>
-    <a href="https://twitter.com/chantry_island"><img class="small-2 small-push-2 medium-1 medium-push-4 columns" src="../img/twitter.jpg" alt="twitter"></a>
-      <img class="small-2 small-pull-2 medium-1 medium-pull-4 columns" src="../img/instagram.jpg" alt="instagram">
-     </div>
-
-    <nav class="footerNav">
-    <h2 class="hide">Footer Navigation</h2>
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-      <li>|</li>
-        <li><a href="tours.html">TOURS</a></li>
-      <li>|</li>
-        <li><a href="volunteers.html">VOLUNTEERS</a></li>
-      <li>|</li>
-        <li><a href="contact.html">CONTACT</a></li>
-      <li>|</li>
-        <li><a href="admin/admin_login.php">ADMIN</a></li>
-      </ul>
-    </nav>
-  
-
-    <img class="footerLogo" src="../img/logo.png" alt="Marine Heritage Society Logo">
-
-    <!-- <img class="footerImg" src="img/footer.png" alt="Chantry Island Migratory Bird Sanctuary Footer"> -->
-  </footer>
 </section>
      <script src="../js/vendor/jquery.min.js"></script>
     <script src="../js/vendor/what-input.min.js"></script>

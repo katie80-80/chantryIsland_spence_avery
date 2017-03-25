@@ -38,46 +38,9 @@ require_once("phpscripts/init.php");
   <a class="adminBut small-12 medium-2 medium-push-3 end columns" href="phpscripts/caller.php?caller_id=logout">Sign Out</a>
 </div>
 
-
-
-   <footer class="footer row">
-
-    <div class="socialMedia row">
-  		<a href="https://www.facebook.com/MarineHeritageSociety/?fref=ts">
-        <img class="small-2 small-offset-2 medium-1 medium-offset-4 columns" src="../img/facebook.jpg" alt="facebook">
-      </a>
-
-  		<a href="https://www.youtube.com/channel/UC5BwiLq9hSIl9BZRq7Q4UNA">
-        <img class="small-2 medium-1 columns" src="../img/youtube.jpg" alt="youtube">
-      </a>
-
-  		<a href="https://twitter.com/chantry_island">
-        <img class="small-2 medium-1 columns" src="../img/twitter.jpg" alt="twitter">
-      </a>
-
-      <a href="#">
-        <img class="small-2 medium-1 columns" src="../img/instagram.jpg" alt="instagram">
-      </a>
-    </div>
-
-    <nav class="footerNav small-12 medium-6 medium-push-3 columns">
-    <h2 class="hide">Footer Navigation</h2>
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-		  <li>|</li>
-        <li><a href="tours.html">TOURS</a></li>
-		  <li>|</li>
-        <li><a href="volunteers.html">VOLUNTEERS</a></li>
-		  <li>|</li>
-        <li><a href="contact.html">CONTACT</a></li>
-		  <li>|</li>
-        <li><a href="admin_login.php">ADMIN</a></li>
-      </ul>
-    </nav>
-
-
-    <img class="footerLogo medium-2 medium-pull-5 columns hide-for-small-only" src="../img/logo.png" alt="Marine Heritage Society Logo">
-  </footer>
+<?php
+  include("../includes/adminFooter.html");
+?>
 
 
 	</section>
