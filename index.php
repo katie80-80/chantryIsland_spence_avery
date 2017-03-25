@@ -185,38 +185,9 @@ We will send a tax receipt for all donations $20 and more.</p>
    
 
 
-  <footer class="footer row">
-    <div class="footerButCon show-for-small-only">
-      <a class="footerBut" href="book.php">TOURS & DATES</a>
-    </div>
-
-    <div class="socialMedia row">
-		<a href="https://www.facebook.com/MarineHeritageSociety/?fref=ts"><img class="small-2 small-push-2 medium-1 medium-push-4 columns" src="img/facebook.jpg" alt="facebook"></a>
-		<a href="https://www.youtube.com/channel/UC5BwiLq9hSIl9BZRq7Q4UNA"><img class="small-2 small-push-2 medium-1 medium-push-4 columns" src="img/youtube.jpg" alt="youtube"></a>
-		<a href="https://twitter.com/chantry_island"><img class="small-2 small-push-2 medium-1 medium-push-4 columns" src="img/twitter.jpg" alt="twitter"></a>
-      <img class="small-2 small-pull-2 medium-1 medium-pull-4 columns" src="img/instagram.jpg" alt="instagram">
-     </div>
-
-    <nav class="footerNav">
-    <h2 class="hide">Footer Navigation</h2>
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-		  <li>|</li>
-        <li><a href="tours.html">TOURS</a></li>
-		  <li>|</li>
-        <li><a href="volunteers.html">VOLUNTEERS</a></li>
-		  <li>|</li>
-        <li><a href="contact.html">CONTACT</a></li>
-		  <li>|</li>
-        <li><a href="admin/admin_login.php">ADMIN</a></li>
-      </ul>
-    </nav>
-
-    
-
-    <img class="footerLogo" src="img/logo.png" alt="Marine Heritage Society Logo">
-
-  </footer>
+<?php
+  include("includes/footer.html");
+?>
 </section>
     
 
