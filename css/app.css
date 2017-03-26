@@ -921,6 +921,9 @@ p{
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
+.levelList{
+	display: inherit;
+}
 
 /*ADMIN END*/
 
