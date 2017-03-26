@@ -48,6 +48,11 @@
     <input class="formStyle adminFiled" type="text" name="username" value="" placeholder="User Name" required/>
 
     <input class="formStyle adminFiled" type="text" name="password" value="" placeholder="Password" required/> 
+    <?php
+      if(!empty($message)) {
+        echo $message;
+      }
+    ?>
     
     <input class="sendBut small-8 small-pull-2 medium-6 medium-pull-3 columns" type="submit" name="submit" value="LOGIN">
     

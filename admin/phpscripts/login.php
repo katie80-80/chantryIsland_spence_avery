@@ -73,7 +73,7 @@
             }else{
                 $updateAttempts = "UPDATE tbl_user SET user_logAttempts = user_logAttempts + 1 WHERE user_name = '{$username}'";
                 $updateQuery = mysqli_query($link, $updateAttempts);
-                $message = "That's not the correct username or password. You can try " . (2- $attempts). "more times.";
+                $message = "That's not the correct username or password. You can try " . (2- $attempts). " more times.";
                 return $message;
             }
 
