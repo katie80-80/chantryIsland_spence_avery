@@ -419,11 +419,20 @@ p{
 .tourBut:hover{
 	color: #3d9278;
 }
+ .tours p:first-of-type{
+	color: #3d9278 !important;
+	font-weight: bold;
+
+}
 .price{
 	text-align: center;
 	color: #3d9278;
 	font-weight: bold;
 }
+.gCalendar{
+
+}
+
 /*TOURS END*/
 
 
@@ -497,6 +506,8 @@ p{
 	color: #3d9278;
 	font-weight: bold;
 	margin-top: 50px;
+	padding-left:10%;
+	padding-right: 10%;
 }
 @media only screen and (min-width: 421px){
 	.camera{
@@ -775,13 +786,19 @@ p{
 #volIcon{
 	margin-bottom: 2em;
 }
+.volHeading{
+	
+}
+.volCopy{
+	margin-bottom: 0;
+}
 
-@media only screen and (min-width: 1024px){
+/*@media only screen and (min-width: 1024px){
 	.aboutVolunteers img{
 		margin-top: 130px;
 	}
 	
-}
+}*/
 /*VOLUNTEERS END*/
 
 

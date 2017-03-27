@@ -8,7 +8,19 @@
     $tbl = "tbl_photos";
     $getPhotos = getAll($tbl);
 
+if(isset($_GET['filter'])) {
+    $tblC = "tbl_copy";
+    $filter = $_GET['filter'];
+    $getHomeCopyA = getSome($tblC, $filter);
+    $getHomeCopyB = getSomeMore($tblC, $filter);
+}else{
+    $tblC = "tbl_copy";
+    $filter = "home";
+    $getHomeCopyA = getSome($tblC, $filter);
+    $getHomeCopyB = getSomeMore($tblC, $filter);
+}
 ?>
+
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -26,110 +38,27 @@
 	  <h1 class="hide">Home Page</h1>
 <section class="container">
 	<h2 class="hide">Welcome to Chantry Island & Marine Heritage Society's home page.</h2>
-  <section class="hide-for-small-only">
-  <h2 class="hide">Donate to the Marine Heritage Society</h2>
-    <div class="donateCon">
-      <h3 class="donateTab">DONATE</h3>
-    </div>
 
-    <div class="flipOut hide">
-      <button class="closeDonate" type="button">CLOSE</button>
-      <p>We are currently engaged in Fund Raising to support our New Boat, Dock Improvements, and Marine Heritage Projects.
-We will send a tax receipt for all donations $20 and more.</p>
-      <img src="img/donateButton.png" alt="Donate Button Placeholder">
-    </div>
-    
-  </section>
+<?php 
 
+include("includes/header.html");
 
-  <section class="hide-for-small-only">
-  <h2 class="hide">Calendar of events & tours.</h2>
-    <div class="bookNowCon">
-      <h3 class="scrollerText">TOURS</h3>
-    </div>
-
-    <div class="foldOut hide">
-      <button class="closeBook" type="button">CLOSE</button>
-
-      <div class="callendar">
-        <div class="row">
-          <div class="eventsTab medium-4 medium-push-2 columns">
-            <img src="img/facebook.svg" alt="facebook">
-            <h4>UPCOMING EVENTS</h4>
-            <p>February 25th Doug Johnson's 91st Birthday.</p>
-          </div>
-          <div class="callendarTab medium-4 medium-push-6 columns">
-            <h4>JUNE</h4>
-            <img src="img/calendarblank.png" alt="Calendar Placeholder">
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="dateTab medium-4 medium-push-2 columns">
-            <p class="date">25</p>
-            <p class="month">JUNE</p>
-          </div>
-          <div class="scheduleTab medium-4 medium-pull-2 columns">
-            <h4>SCHEDULE</h4>
-            <p>Tours depart at 1PM &amp; 3PM <br>
-            <a href="contact.html">TOURS</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-   </section>
-
-  <header class="staticHeader row">
-    <h2 class="hide">Chantry Island Historical LightHouse and Bird Sanctuary Tours - Start of page content.</h2>
-
-    <div class="logo small-2 small-push-1 columns">
-      <img src="img/logo.png" alt="Marine Heritage Society Logo">
-    </div>
-    
-    <div class="headerContact small-5 small-push-3 medium-push-6 large-push-6 columns">
-      <a href="tel:+15197975862">Call: 519-797-5862</a><br>
-      <a href="tel:+18667975862">Toll Free: 1-866-797-5862</a>
-	  <p></p>
-    </div>
-
-    <img src="img/hamberger.png" class="hamburger small-2 show-for-small-only columns" alt="burger menu">
-    <div class="hide" id="menu">
-      <nav>
-       <h2 class="hide">Small Screen Navigation (hides at large)</h2>
-        <ul id="mainNav">
-            <li><a href="index.">HOME</a></li>
-            <li><a href="tours.html">TOURS</a></li>
-            <li><a  href="volunteers.html">VOLUNTEERS</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <h2>Chantry Island</h2>
-
-    <nav class="medUpMainNav hide-for-small-only">
-    <h2 class="hide">Medium & up Navigation</h2>
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-		  <li class="border">|</li>
-        <li><a href="tours.html">TOURS</a></li>
-		  <li class="border">|</li>
-        <li><a href="volunteers.html">VOLUNTEERS</a></li>
-		  <li class="border">|</li>
-        <li><a href="contact.html">CONTACT</a></li>
-      </ul>
-    </nav>
-
-
-    <div class="headerButCon show-for-small-only">
-      <a class="headerBut" href="book.php">TOURS & DATES</a>
-    </div>
-  </header>
+ ?>
 
   <section class="MHS row">
-    <h3>Marine Heritage Society</h3>
-	  <h3 class="hide">Description of Marine Heritage Society.</h3>
-    <p class="small-12 medium-10 medium-pull-1 columns">The Marine Heritage Society is a not-for-profit group of volunteers whose objective is to identify, preserve and restore material items of marine historical significance and to raise sufficient funds to support these endeavors. The Society manages the Chantry Island Light Station under agreements and restrictions from the Canadian Coast Guard and the Canadian Wildlife Service among other projects.</p>
+
+<?php 
+
+  if(!is_string($getHomeCopyA)){
+    while($row = mysqli_fetch_array($getHomeCopyA)){
+      echo "<h3>{$row['copy_heading']}</h3>";
+      echo "<p class=\"small-12 medium-10 medium-pull-1 columns\">{$row['copy_content']}</p>";
+    }
+  }
+
+ ?>
+
+  
   </section>
 
   <section class="decoImg row">
@@ -140,15 +69,25 @@ We will send a tax receipt for all donations $20 and more.</p>
   </section>
 
   <section class="tours row">
-    <h3>Beautiful Chantry Island</h3>
-	  <h3 class="hide">Description of what Chantry Island has to offer.</h3>
-    <div class="small-12 medium-10 medium-pull-1 columns">
-      <p>Chantry Island is located on Lake Huron, just over a mile southwest of the Saugeen River mouth in Southampton, Ontario. On the island is a majestic Imperial Lighthouse built in the mid 1800’s, the Keeper’s quarters, and a boat house.</p> 
+  <div class="small-12 medium-10 medium-push-1 columns">
 
-      <p>The island varies in size depending on the level of Lake Huron. Today, with a low lake level Chantry Island is about 68 acres. In 1986 when the water level was at the highest of the century, the island was only about 10 acres, causing trees on the west, north and south sides to drown.</p>
+<?php 
 
-      <p>Chantry Island is a glacial moraine and consists of stone above the water and beneath extending a mile north and a mile south of the island. These underwater shoals of massive granite boulders have made this area one of the most treacherous in the Great Lakes from the 1800’s and early – mid 1900’s. There are over 50 known shipwrecks around the island.<br><a class="tourBut" href="tours.php">MORE TOUR INFORMATION HERE</a></p>
-    </div>
+  if(!is_string($getHomeCopyB)){
+    while($row = mysqli_fetch_array($getHomeCopyB)){
+
+      echo "<h3>{$row['copy_heading']}</h3>";
+
+      echo "<p>{$row['copy_content']}</p>";
+
+    }
+  }else{
+    echo "<p>{$getCopy}</p>";
+  }
+
+ ?>
+
+  </div>
 
   </section>
 
