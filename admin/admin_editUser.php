@@ -1,3 +1,4 @@
+
 <?php
 	require_once("phpscripts/init.php");
 

@@ -31,10 +31,15 @@ $filter = $_GET['filter'];
     <div class="small-12 medium-10 medium-pull-1 columns">
 
 <?php
-  $tbl = "tbl_copy";
-  $col = "copy_content";
-  $postition=1;
-  single_edit($tbl, $col, $filter, $postition);
+$postition = 1;
+$popform = getCopy($filter, $postition);
+
+if(isset($_POST['submit'])){
+  $copy = 'copy';
+  $result = editCopy($filter, $postition, $copy);
+}
+echo"<textarea class=\"editArea small-12 medium-10 medium-push-1 columns\" name=\"copy\" value=\"{$popform['copy_content']}\"></textarea>";
+  
 ?>
 </div>
 
