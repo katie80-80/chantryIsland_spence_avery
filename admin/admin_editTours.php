@@ -1,14 +1,6 @@
 <?php
-
-  ini_set('display_errors',1);
-    error_reporting(E_ALL);
-
-  require_once('admin/phpscripts/init.php');
-    
-  $tblC = "tbl_copy";
-  $filter = $_GET['filter'];
-  
-
+require_once("phpscripts/init.php");
+$filter = $_GET['filter'];
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -17,8 +9,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tour Chantry Island </title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="../css/foundation.css" />
+    <link rel="stylesheet" href="../css/app.css" />
     <link href="https://fonts.googleapis.com/css?family=Pacifico%7CRoboto" rel="stylesheet">
   </head>
   <body>
@@ -28,58 +20,41 @@
 
 <?php 
 
-include("includes/header.html");
+include("../includes/adminHeader.html");
 
 ?>
 
- <section class="tours row">
+<section class="tours row">
  <h3>Our Tours</h3>
 
-<?php 
-
-$position=1;
-
-$getTourCopy = getSome($tblC, $filter, $position);
-
-if(!is_string($getTourCopy)){
-    while($row = mysqli_fetch_array($getTourCopy)){
-
-      echo "<p class=\"small-12 medium-10 medium-push-1 columns\">{$row['copy_content']}</p>";
-
-    }
-  }
+ <?php
+  $tbl = "tbl_copy";
+  $col = "copy_content";
+  $postition=1;
+  single_edit($tbl, $col, $filter, $postition);
 ?>
-
-    <section class="row beSure">
+<section class="row beSure">
     <h3 class="small-12 columns">Be Sure to Bring</h3>
 
   
 
-        <img class="small-6 medium-3 columns" src="img/waterbottle.png" alt="Water Bottle">
-        <img class="boots small-6 medium-3 columns" src="img/boots.png" alt="Boots">
+        <img class="small-6 medium-3 columns" src="../img/waterbottle.png" alt="Water Bottle">
+        <img class="boots small-6 medium-3 columns" src="../img/boots.png" alt="Boots">
    
 
  
-        <img class="camera small-6 medium-3 columns" src="img/camera.png" alt="Camera">
-        <img class="jacket small-6 medium-3  columns" src="img/jacket.png" alt="Jacket">
+        <img class="camera small-6 medium-3 columns" src="../img/camera.png" alt="Camera">
+        <img class="jacket small-6 medium-3  columns" src="../img/jacket.png" alt="Jacket">
     </section>
 
      <p class="small-12 columns noFlops">Footwear suitable for hiking is mandatory. No flip-flops please.</p>
 
-  <?php 
-  $position=2;
-
-  $getTourCopy = getSome($tblC, $filter, $position);
-
-  if(!is_string($getTourCopy)){
-    while($row = mysqli_fetch_array($getTourCopy)){
-
-      echo "<p class=\"small-12 medium-10 medium-pull-1 columns\">{$row['copy_content']}</p>";
-
-    }
-  }
-
- ?>
+<?php
+  $tbl = "tbl_copy";
+  $col = "copy_content";
+  $postition=2;
+  single_edit($tbl, $col, $filter, $postition);
+?>
 
 </section>
 
@@ -94,7 +69,7 @@ if(!is_string($getTourCopy)){
 
   
 <?php
-  include("includes/footer.html");
+  include("../includes/adminFooter.html");
 ?>
 </section>
     
@@ -106,3 +81,11 @@ if(!is_string($getTourCopy)){
     <script src="js/TweenMax.min.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+

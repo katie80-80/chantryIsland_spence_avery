@@ -3,8 +3,10 @@ require_once('admin/phpscripts/init.php');
 
 $tblC = "tbl_copy";
 $filter = $_GET['filter'];
-$getVolCopyA = plzGet($tblC, $filter);
-$getVolCopyB = plzGet($tblC, $filter);
+
+
+$tblV = "tbl_volunteers";
+$getVolunteers = getVol($tblV);
 ?>
 
 
@@ -30,23 +32,22 @@ include("includes/header.html");
  ?>
 
   <section class="aboutVolunteers row">
+  <h3>Volunteers</h3>
+  <div class="volCopy small-12 medium-6 medium-push-1 columns">
   
 <?php  
+$position=1;
+$getVolCopy = getSome($tblC, $filter,$position);
 
-if(!is_string($getVolCopyA)){
-    while($row = mysqli_fetch_array($getVolCopyA)){
-      echo "<h3 class=\"volHeading small-12 columns\">{$row['copy_heading']}</h3>";
-    }
-  }
-  echo "<div class=\"volCopy small-12 medium-6 medium-push-1 columns\">";
-if(!is_string($getVolCopyB)){
-    while($row = mysqli_fetch_array($getVolCopyB)){
+if(!is_string($getVolCopy)){
+    while($row = mysqli_fetch_array($getVolCopy)){
       echo "<p>{$row['copy_content']}</p>";
     }
   }
-  echo "</div>";
-?>
 
+?>
+  
+  </div>
 
     <img class="small-12 medium-4 columns" src="img/volunteer_icon.png" id="volIcon" alt="Volunteers">
     
@@ -65,19 +66,18 @@ if(!is_string($getVolCopyB)){
   <section class="volunteers row">
     <h3>Meet Our Volunteers</h3>
     <ul class="volunteerList row">
-      <li class="small-12 medium-6 columns">Don Nicholson-Chairman</li>
-      <li class="small-12 medium-6 columns">Pat O'Connor-Vice Chairman</li>
-      <li class="small-12 medium-6 columns">John Rigby-Treasurer</li>
-      <li class="small-12 medium-6 columns">Stan Young-Secretary</li>
-      <li class="small-12 medium-6 columns">Rick Smith-Past Chairman</li>
-      <li class="small-12 medium-6 columns">Ali Kelly</li>
-      <li class="small-12 medium-6 columns">Jane Kramer</li>
-      <li class="small-12 medium-6 columns">Vicki Tomori</li>
-      <li class="small-12 medium-6 columns">Dan Holmes</li>
-      <li class="small-12 medium-6 columns">Ed Braun</li>
-      <li class="small-12 medium-6 columns">John Willetts</li>
-      <li class="small-12 medium-6 columns">Peter Williamson-Observer</li>
-      <li class="small-12 medium-6 columns">Dave Wenn</li>
+
+<?php 
+
+if(!is_string($getVolunteers)){
+    while($row = mysqli_fetch_array($getVolunteers)){
+      echo "<li class=\"small-12 medium-6 columns\">{$row['volunteers_name']}</li>";
+    }
+  }
+
+
+?>
+
     </ul>
 </section>
 

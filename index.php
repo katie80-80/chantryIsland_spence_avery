@@ -11,13 +11,10 @@
 if(isset($_GET['filter'])) {
     $tblC = "tbl_copy";
     $filter = $_GET['filter'];
-    $getHomeCopyA = getSome($tblC, $filter);
-    $getHomeCopyB = getSomeMore($tblC, $filter);
+    
 }else{
     $tblC = "tbl_copy";
     $filter = "home";
-    $getHomeCopyA = getSome($tblC, $filter);
-    $getHomeCopyB = getSomeMore($tblC, $filter);
 }
 ?>
 
@@ -46,12 +43,14 @@ include("includes/header.html");
  ?>
 
   <section class="MHS row">
+    <h3>Marine Heritage Society</h3>
+
 
 <?php 
-
-  if(!is_string($getHomeCopyA)){
-    while($row = mysqli_fetch_array($getHomeCopyA)){
-      echo "<h3>{$row['copy_heading']}</h3>";
+  $position = 1;
+  $getHomeCopy = getSome($tblC, $filter, $position);
+  if(!is_string($getHomeCopy)){
+    while($row = mysqli_fetch_array($getHomeCopy)){
       echo "<p class=\"small-12 medium-10 medium-pull-1 columns\">{$row['copy_content']}</p>";
     }
   }
@@ -68,21 +67,19 @@ include("includes/header.html");
 	  <div class="small-4 columns"><img class="icons" src="img/birdicon.svg" alt="Charming Boat"></div>
   </section>
 
-  <section class="tours row">
-  <div class="small-12 medium-10 medium-push-1 columns">
+  <section class="row">
+  <h3>Beautiful Chantry Island</h3>
+  <div class="small-12 medium-10 medium-pull-1 columns">
 
 <?php 
-
-  if(!is_string($getHomeCopyB)){
-    while($row = mysqli_fetch_array($getHomeCopyB)){
-
-      echo "<h3>{$row['copy_heading']}</h3>";
+  $position = 2;
+  $getHomeCopy = getSome($tblC, $filter, $position);
+  if(!is_string($getHomeCopy)){
+    while($row = mysqli_fetch_array($getHomeCopy)){
 
       echo "<p>{$row['copy_content']}</p>";
 
     }
-  }else{
-    echo "<p>{$getCopy}</p>";
   }
 
  ?>

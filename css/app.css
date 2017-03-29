@@ -942,6 +942,10 @@ p{
 	display: inherit;
 }
 
+.editArea{
+	height: 10em !important;
+}
+
 /*ADMIN END*/
 
 

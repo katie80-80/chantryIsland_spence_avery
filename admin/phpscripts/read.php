@@ -11,23 +11,9 @@
 			return $error;
 		}
 	}
-	function getSome($tblC, $filter) {
+	function getSome($tblC, $filter, $position) {
 		include('connect.php');
-		$queryCopy = "SELECT * FROM {$tblC} WHERE copy_id<2 AND copy_page='{$filter}'";
-		//echo $queryFilter;
-		$runCopy = mysqli_query($link, $queryCopy);
-		
-		if($runCopy){
-			return $runCopy;	
-		}else{
-			$error =  "There was an error accessing this information.  Please contact your admin.";
-			return $error;
-		}
-		
-	}
-	function getSomeMore($tblC, $filter) {
-		include('connect.php');
-		$queryCopy = "SELECT * FROM {$tblC} WHERE copy_id>1 AND copy_page='{$filter}'";
+		$queryCopy = "SELECT * FROM {$tblC} WHERE copy_position = {$position} AND copy_page='{$filter}'";
 		//echo $queryFilter;
 		$runCopy = mysqli_query($link, $queryCopy);
 		
@@ -40,9 +26,10 @@
 		
 	}
 
-	function getPlz($tblC, $filter) {
+	
+	function getVol($tblV){
 		include('connect.php');
-		$queryCopy = "SELECT * FROM {$tblC} WHERE copy_id<7 AND copy_page='{$filter}'";
+		$queryCopy = "SELECT * FROM {$tblV} ORDER BY volunteers_id ASC";
 		//echo $queryFilter;
 		$runCopy = mysqli_query($link, $queryCopy);
 		
@@ -52,36 +39,20 @@
 			$error =  "There was an error accessing this information.  Please contact your admin.";
 			return $error;
 		}
-		
+
 	}
 
-	function getMorePlz($tblC, $filter) {
+	function getSingle($tbl, $col, $filter, $position) {
 		include('connect.php');
-		$queryCopy = "SELECT * FROM {$tblC} WHERE copy_id>6 AND copy_page='{$filter}'";
-		//echo $queryFilter;
-		$runCopy = mysqli_query($link, $queryCopy);
+		$querySingle = "SELECT {$col} FROM {$tbl} WHERE copy_page='{$filter}' AND copy_position = '{$position}'";
+		$runSingle = mysqli_query($link, $querySingle);
 		
-		if($runCopy){
-			return $runCopy;	
+		if($runSingle){
+			return $runSingle;	
 		}else{
 			$error =  "There was an error accessing this information.  Please contact your admin.";
 			return $error;
 		}
-		
-	}
-	function plzGet($tblC, $filter) {
-		include('connect.php');
-		$queryCopy = "SELECT * FROM {$tblC} WHERE copy_page='{$filter}'";
-		//echo $queryFilter;
-		$runCopy = mysqli_query($link, $queryCopy);
-		
-		if($runCopy){
-			return $runCopy;	
-		}else{
-			$error =  "There was an error accessing this information.  Please contact your admin.";
-			return $error;
-		}
-		
 	}
 
 

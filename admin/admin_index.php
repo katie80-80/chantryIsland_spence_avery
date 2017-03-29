@@ -1,6 +1,5 @@
 <?php
 require_once("phpscripts/init.php");
-//confirm_logged_in(); // uncomment for checking css
  ?>
  <!doctype html>
 <html class="no-js" lang="en">
@@ -23,13 +22,13 @@ require_once("phpscripts/init.php");
 
 <div class="row">
 <h3>Edit Pages</h3>
-  <a class="adminPgBtn small-12 medium-3 medium-push-3 columns" href="#">HOME</a>
-  <a class="adminPgBtn small-12 medium-3 medium-push-3 end columns" href="#">TOURS</a>
+  <a class="adminPgBtn small-12 medium-3 medium-push-3 columns" href="admin_editIndex.php?filter=home">HOME</a>
+  <a class="adminPgBtn small-12 medium-3 medium-push-3 end columns" href="admin_editTours.php?filter=tours">TOURS</a>
 </div>
 
 <div class="row">
-  <a class="adminPgBtn small-12 medium-3 medium-push-3 columns" href="#">VOLUNTEERS</a>
-  <a class="adminPgBtn small-12 medium-3 medium-push-3 end columns" href="#">CONTACT</a>
+  <a class="adminPgBtn small-12 medium-3 medium-push-3 columns" href="admin_editVolunteers.php?filter=volunteers">VOLUNTEERS</a>
+  <a class="adminPgBtn small-12 medium-3 medium-push-3 end columns" href="#">CALENDAR</a>
 </div>
 
 <div class="row">
