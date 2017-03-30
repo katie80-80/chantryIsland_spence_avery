@@ -17,7 +17,7 @@ $filter = $_GET['filter'];
   <body>
 	  <h1 class="hide">Home Page</h1>
 <section class="container">
-	<h2 class="hide">Welcome to Chantry Island & Marine Heritage Society's home page.</h2>
+	<h2 class="hide">Welcome to Chantry Island &amp; Marine Heritage Society's home page.</h2>
 
 <?php 
 
@@ -31,14 +31,15 @@ $filter = $_GET['filter'];
     <div class="small-12 medium-10 medium-pull-1 columns">
 
 <?php
-$postition = 1;
-$popform = getCopy($filter, $postition);
+$position = 1;
+$popform = getCopy($filter, $position);
 
 if(isset($_POST['submit'])){
   $copy = 'copy';
-  $result = editCopy($filter, $postition, $copy);
+  $result = editCopy($filter, $position, $copy);
 }
-echo"<textarea class=\"editArea small-12 medium-10 medium-push-1 columns\" name=\"copy\" value=\"{$popform['copy_content']}\"></textarea>";
+echo "<textarea class=\"editArea small-12 medium-10 medium-push-1 columns\" name=\"copy\">".$popform['copy_content']."</textarea>";
+//echo $popform['copy_content'];
   
 ?>
 </div>
