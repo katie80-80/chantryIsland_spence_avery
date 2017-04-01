@@ -1,5 +1,5 @@
-<?php 
-	function getAll($tbl) {
+<?php
+function getAll($tbl) {
 		include('connect.php');
 		$queryAll = "SELECT * FROM {$tbl}";
 		$runAll = mysqli_query($link, $queryAll);
@@ -54,6 +54,4 @@
 			return $error;
 		}
 	}
-
-
 ?>

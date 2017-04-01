@@ -943,7 +943,17 @@ p{
 }
 
 .editArea{
-	height: 10em !important;
+	resize: vertical;
+	padding: 30px;
+}
+.addPhotoBut{
+	background-color: #be2135;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	color: #fff;
+	margin-top: 15px;
+	text-align: center;
+
 }
 
 /*ADMIN END*/

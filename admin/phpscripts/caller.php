@@ -1,5 +1,5 @@
 <?php
-	require_once('init.php');
+require_once('init.php');
 
 	if(isset($_GET['caller_id'])) {
 		$dir = $_GET['caller_id'];
@@ -16,4 +16,4 @@
 	}else{
 		echo "caller not set";
 	}
- ?>
+?>

@@ -1,5 +1,5 @@
-<?php 
-	function getUser($id){
+<?php
+function getUser($id){
 		require_once("connect.php");
 		//create query 
 		$userstring = "SELECT * FROM tbl_user WHERE user_id = {$id}";
@@ -63,7 +63,4 @@ function editUser($id, $fname, $lname, $username, $password, $email){
 
 	mysqli_close($link);
 }
-
-
-
 ?>

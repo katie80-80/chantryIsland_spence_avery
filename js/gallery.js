@@ -64,8 +64,11 @@ $(document).foundation();
 	function nextPic(){
 
 		targetImg++;
-		imgChange();
 
+		if(){
+			
+		}
+		imgChange();
 	}
 	function lastPic(){
 

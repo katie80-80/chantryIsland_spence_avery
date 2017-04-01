@@ -85,7 +85,7 @@ if(!is_string($getTourCopy)){
 
   <section class="schedule row">
     <div class="">
-    <iframe class="small-12 columns gCalendar" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=760&amp;wkst=1&amp;bgcolor=%23cccccc&amp;src=t4pac83t33k9bon8ni1dq12h9c%40group.calendar.google.com" style="border-width:0" width="80%" height="500" frameborder="0" scrolling="no"></iframe>
+    <iframe class="small-12 columns gCalendar" src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=t4pac83t33k9bon8ni1dq12h9c%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FToronto" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
       
     </div>
 
