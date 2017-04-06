@@ -1,12 +1,12 @@
-<?php 
+<?php
 require_once('phpscripts/init.php');
-
-$tblC = "tbl_copy";
-$filter = $_GET['filter'];
-
-
 $tblV = "tbl_volunteers";
 $getVolunteers = getVol($tblV);
+if(isset($_POST['submit'])){
+  $name = trim($_POST['name']);
+  $result = newVolunteer($name);
+  $message = $result;
+}
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -18,60 +18,42 @@ $getVolunteers = getVol($tblV);
     <link rel="stylesheet" href="../css/foundation.css" />
     <link rel="stylesheet" href="../css/app.css"/>
    <link href="https://fonts.googleapis.com/css?family=Pacifico%7CRoboto" rel="stylesheet">
+   <script src="https://use.fontawesome.com/d0bb73139e.js"></script>
   </head>
   <body>
-  <h1 class="hide">Volunteers Page</h1>
-<section class="container">
-	<h2 class="hide">Welcome to Chantry Island & Marine Heritage Society's volunteers page.</h2>
-<?php 
+  <h1 class="hide">EDIT VOLUNTEERS</h1>
+  <section>
+    <h2 class="adminHeading">ADD A VOLUNTEER</h2>
+    <form class="adminLogForm" action="admin_editVolunteers.php" method="post">
+  
+      <input class="formStyle adminFiled" type="text" placeholder="Full Name" name="name">
 
-include("../includes/adminHeader.html");
-
- ?>
-  <section class="aboutVolunteers row">
-  <h3>Volunteers</h3>
-  <div class="volCopy small-12 medium-6 medium-push-1 columns">
-<?php
-  $tbl = "tbl_copy";
-  $col = "copy_content";
-  $postition=1;
-  single_edit($tbl, $col, $filter, $postition);
-?>
-</div>
-
-    <img class="small-12 medium-4 columns" src="../img/volunteer_icon.png" id="volIcon" alt="Volunteers">
-    
+  <input class="sendBut small-8 small-pull-2 medium-6 medium-pull-3 columns" type="submit" name="submit" value="ADD">
+ </form>
   </section>
 
 
-	<section class="volunteerVids row">
-	<h2 class="hide">Volunteer Videos</h2>
-	<iframe class="small-12 medium-4 columns" width="560" height="315" src="https://www.youtube.com/embed/N27M4OmubxI?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-	<iframe class="small-12 medium-4 columns" width="560" height="315" src="https://www.youtube.com/embed/hbGffSYF5LU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-	<iframe class="small-12 medium-4 columns" width="560" height="315" src="https://www.youtube.com/embed/BkZWHmX8HY0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-	</section>
-  
-
-
-  <section class="volunteers row">
-    <h3>Meet Our Volunteers</h3>
+<section class="volunteers row">
+    <h2 class="adminHeading">Delete Volunteers</h2>
     <ul class="volunteerList row">
-    </ul>
-</section>
-
-<?php
-  include("../includes/adminFooter.html");
+    <?php
+  if(!is_string($getVolunteers)){
+    while($row = mysqli_fetch_array($getVolunteers)){
+      echo "<li class=\"small-12 medium-6 columns\">
+              {$row['volunteers_name']}<a href=\"phpscripts/delete.php?caller_id=deleteVol&id={$row['volunteers_id']}\">
+                  <i class=\"fa fa-trash-o\"></i></a>
+          </li>";
+    }
+  }
 ?>
-</section>
-    
+    </ul>
 
-    <script src="js/vendor/jquery.min.js"></script>
+   
+</section>
+ <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/what-input.min.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/TweenMax.min.js"></script>
   </body>
 </html>
-
-
-

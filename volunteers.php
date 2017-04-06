@@ -35,17 +35,17 @@ include("includes/header.html");
   <h3>Volunteers</h3>
   <div class="volCopy small-12 medium-6 medium-push-1 columns">
   
-<?php  
-$position=1;
-$getVolCopy = getSome($tblC, $filter,$position);
-
-if(!is_string($getVolCopy)){
-    while($row = mysqli_fetch_array($getVolCopy)){
-      echo "<p>{$row['copy_content']}</p>";
-    }
-  }
-
-?>
+<p>In 1954  lighthouse lamp was converted from fuel to electricity. With no need for a lighthouse  island was left unoccupied and the structures fell into disrepair. In 1997 marine heritage society established goals for restoration of the Island’s structures and in 2001 chantry Island was restored to her former beauty thanks to he the help of 250 volunteers donating nearly 300,000 hours.</p>
+<p>Our wonderful volunteers have since restored the staircase of the lighthouse, built a boathouse on the island, constructed a replica of the original boat (which sits in the boathouse) and reconstructed the privy.</p>
+<p>Today the tour is operated with over <?php
+$id = 5;
+$pop = getCopy($filter, $id);
+echo $pop['copy_content'];
+?>  volunteers, whose jobs include island housekeepers, gardeners, tour boat captains, crew and tour guides, and gift shop sales and service personnel. Volunteers also install the portable walkways and docks every spring and remove them every fall. To date, there have been over <?php
+$id = 6;
+$pop = getCopy($filter, $id);
+echo $pop['copy_content'];
+?>  visitors to the island.</p>
   
   </div>
 

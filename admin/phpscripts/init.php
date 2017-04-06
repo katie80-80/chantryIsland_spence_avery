@@ -4,5 +4,5 @@
 	require_once('login.php');
 	require_once('sessions.php');
 	require_once('user.php');
-	require_once('editCopy.php');
+	require_once('addPhoto.php');
 ?>

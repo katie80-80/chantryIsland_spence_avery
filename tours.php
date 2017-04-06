@@ -4,8 +4,6 @@
     error_reporting(E_ALL);
 
   require_once('admin/phpscripts/init.php');
-    
-  $tblC = "tbl_copy";
   $filter = $_GET['filter'];
   
 
@@ -35,20 +33,22 @@ include("includes/header.html");
  <section class="tours row">
  <h3>Our Tours</h3>
 
-<?php 
+<p class="small-8 small-push-2 columns price">$
+<?php
+$id = 3;
+$pop = getCopy($filter, $id);
+echo $pop['copy_content'];
+?> 
+per person<br>We recommend you call and book ahead to avoid disappointment.</p>
+<p class="small-12 medium-10 medium-push-1 columns">
+<?php
+$id = 4;
+$pop = getCopy($filter, $id);
+echo $pop['copy_content'];
+?> 
+</p>
 
-$position=1;
-
-$getTourCopy = getSome($tblC, $filter, $position);
-
-if(!is_string($getTourCopy)){
-    while($row = mysqli_fetch_array($getTourCopy)){
-
-      echo "<p class=\"small-12 medium-10 medium-push-1 columns\">{$row['copy_content']}</p>";
-
-    }
-  }
-?>
+<!-- <p class="small-12 medium-10 medium-push-1 columns">Enjoy a two hour stroll back in time and see the Light Keeper's Cottage as it existed in the late 1800’s, decorated with period furnishings from private donors and the Bruce County Museum and Cultural Centre. You will also see the surrounding gardens and many species of birds. The tour is much like a medium hike and requires a degree of physical fitness and mobility. Although can enjoy the tour without climbing the 106 steps in the Lighthouse tower, if you do reach the light room, you will always remember the view.</p> -->
 
     <section class="row beSure">
     <h3 class="small-12 columns">Be Sure to Bring</h3>
@@ -66,20 +66,7 @@ if(!is_string($getTourCopy)){
 
      <p class="small-12 columns noFlops">Footwear suitable for hiking is mandatory. No flip-flops please.</p>
 
-  <?php 
-  $position=2;
-
-  $getTourCopy = getSome($tblC, $filter, $position);
-
-  if(!is_string($getTourCopy)){
-    while($row = mysqli_fetch_array($getTourCopy)){
-
-      echo "<p class=\"small-12 medium-10 medium-pull-1 columns\">{$row['copy_content']}</p>";
-
-    }
-  }
-
- ?>
+   <p class="small-12 medium-10 medium-pull-1 columns">Because the island is a migratory bird sanctuary, there are no pets allowed. For safety, children must be a minimum of 4 feet tall and must be accompanied by an Adult. Tours must be booked and prepaid through the Chantry Island Tour Base and Gift Shop located at the south side of the Saugeen River at the harbour in Southampton. Arrive at the Chantry Island Tour Base 15 minutes ahead of your scheduled tour to check in, receive your ticket, and then proceed to the dock to meet our craft, the Peerless II. There are 9 seats available on the boat so be sure to invite friends. On the 15 minute boat ride to the island, you will enjoy the outstanding views of the sandy beach shoreline and the deep blue waters of Lake Huron. Cancellations must be received 24 hours before the scheduled departure to receive a refund. Cancellation can be caused by weather conditions but light rain is fine.</p>
 
 </section>
 
