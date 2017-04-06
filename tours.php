@@ -48,8 +48,6 @@ echo $pop['copy_content'];
 ?> 
 </p>
 
-<!-- <p class="small-12 medium-10 medium-push-1 columns">Enjoy a two hour stroll back in time and see the Light Keeper's Cottage as it existed in the late 1800’s, decorated with period furnishings from private donors and the Bruce County Museum and Cultural Centre. You will also see the surrounding gardens and many species of birds. The tour is much like a medium hike and requires a degree of physical fitness and mobility. Although can enjoy the tour without climbing the 106 steps in the Lighthouse tower, if you do reach the light room, you will always remember the view.</p> -->
-
     <section class="row beSure">
     <h3 class="small-12 columns">Be Sure to Bring</h3>
 
@@ -71,6 +69,7 @@ echo $pop['copy_content'];
 </section>
 
   <section class="schedule row">
+  <h3>Calendar</h3>
     <div class="">
     <iframe class="small-12 columns gCalendar" src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=t4pac83t33k9bon8ni1dq12h9c%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FToronto" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
       

@@ -38,6 +38,7 @@
  	}
  ?>
 	<section class="container">
+	<h2 class="hide">Create User</h2>
 
 	<form class="adminLogForm" action="admin_createUser.php" method="post">
  	
