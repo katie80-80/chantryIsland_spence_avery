@@ -4,12 +4,12 @@ ini_set('display_errors', 1);
 require_once('phpscripts/init.php');
 $tbl = "tbl_photos";
 if(isset($_POST['submit1'])){
-	$img = $_FILES['photo_img']['name'];
-	$thumb = "TH_{$img}";
-	$title = $_POST['photos_title'];
-	$decs = $_POST['description'];
-	$addPhoto = addPhoto($img,$thumb,$title, $decs);
-	$message = $addPhoto;
+  $img = $_FILES['photo_img']['name'];
+  $thumb = "TH_{$img}";
+  $title = $_POST['photos_title'];
+  $decs = $_POST['description'];
+  $addPhoto = addPhoto($img,$thumb,$title, $decs);
+  $message = $addPhoto;
 }
 $photoList = getALL($tbl);
 ?>
@@ -29,12 +29,12 @@ $photoList = getALL($tbl);
   <h1 class="hide">Edit Photos</h1>
   <form class="adminFiled" action="admin_editPhotos.php" method="post" enctype="multipart/form-data">
   <h2 class="adminHeading">Add Photos</h2>
-	  <input type="file" name="photo_img" value="" size="32"><br><br>
-	  <label>Name:</label><br>
-	  <input type="text" name="photos_title" value="" size="32" ><br><br>
-	  <label>Description:</label><br>
-	  <input type="text" name="description" value="" size="32" ><br><br>
-	  <input class="sendBut" type="submit" name="submit1" value="Add" >
+    <input type="file" name="photo_img" value="" size="32"><br><br>
+    <label>Name:</label><br>
+    <input type="text" name="photos_title" value="" size="32" ><br><br>
+    <label>Description:</label><br>
+    <input type="text" name="description" value="" size="32" ><br><br>
+    <input class="sendBut" type="submit" name="submit1" value="Add" >
   </form>
  
 
@@ -51,7 +51,7 @@ $photoList = getALL($tbl);
   
 
 
-  	
+    
     <script src="../js/vendor/what-input.min.js"></script>
     <script src="../js/vendor/jquery.min.js"></script>
    <script src="../js/foundation.min.js"></script>

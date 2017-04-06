@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
   if(!is_string($getVolunteers)){
     while($row = mysqli_fetch_array($getVolunteers)){
       echo "<li class=\"small-12 medium-6 columns\">
-              {$row['volunteers_name']}<a href=\"phpscripts/delete.php?caller_id=deleteVol&id={$row['volunteers_id']}\">
+              {$row['volunteers_name']}<a class=\"deletePic\" href=\"phpscripts/delete.php?caller_id=deleteVol&id={$row['volunteers_id']}\">
                   <i class=\"fa fa-trash-o\"></i></a>
           </li>";
     }
@@ -50,10 +50,10 @@ if(isset($_POST['submit'])){
 
    
 </section>
- <script src="js/vendor/jquery.min.js"></script>
-    <script src="js/vendor/what-input.min.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/TweenMax.min.js"></script>
+ <script src="../js/vendor/jquery.min.js"></script>
+    <script src="../js/vendor/what-input.min.js"></script>
+    <script src="../js/foundation.min.js"></script>
+    <script src="../js/deleter.js"></script>
+    <script src="../js/TweenMax.min.js"></script>
   </body>
 </html>
