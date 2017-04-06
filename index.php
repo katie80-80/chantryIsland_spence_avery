@@ -103,9 +103,13 @@ include("includes/header.html");
     
       <div class="lbOverlay hide">
         <i class="lbClose fa fa-window-close fa-3x hide"></i>
-        <i class="arrow arrowLeft fa fa-chevron-circle-left fa-4x hide"></i>
-        <i class="arrow arrowRight fa fa-chevron-circle-right fa-4x hide"></i>
-        <img src="#" alt="Gallery Image" class="fullImg fullGal small-7 small-pull-2 columns hide">
+        <div class="galMobile">
+        <i class="arrow small-2 medium-push-1 columns arrowLeft fa fa-chevron-circle-left fa-3x hide"></i>
+        
+      
+        <img src="#" alt="Gallery Image" class="fullImg fullGal small-8 columns hide">
+        <i class="arrow small-2 columns arrowRight fa fa-chevron-circle-right fa-3x hide"></i>
+        </div>
       </div>
 
   </section>

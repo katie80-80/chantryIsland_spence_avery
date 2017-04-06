@@ -709,26 +709,34 @@ p{
 	margin-top: 150px;
 }*/
 .arrow{
-	position: absolute;
+	/*position: absolute;*/
 	margin-top: 20%;
+	color: #fff;
+
 }
 .arrowLeft{
-	margin-left: 12%;
+	/*margin-left: 12%;*/
+	/*margin-left: 15px;*/
 }
 
 .arrowRight{
-	margin-left: 85%
+	/*margin-top: 45px;*/
+/*	margin-right: 10px;
+	position: absolute;*/
+	
 }
 
 .lbClose{
-	float: right;
-	padding-right: 10px;
+
+	padding-left: 85%;
 	padding-top: 5px;
+	color: #fff;
+	position: absolute;
 }
 
 .fullImg{
-	padding-left: 3%;
-	padding-right: 3%;
+	/*padding-left: 3%;*/
+	/*padding-right: 3%;*/
 	padding-top: 5%
 }
 
@@ -752,6 +760,14 @@ p{
 .gallery{
 	padding-left: 10%;
 	padding-right: 10%;
+}
+.galMobile{
+	margin-top: 10%;
+}
+@media only screen and (min-width: 500px){
+.galMobile{
+	margin-top: 2%;
+}
 }
 
 

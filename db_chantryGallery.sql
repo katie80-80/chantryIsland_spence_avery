@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 05, 2017 at 11:14 PM
+-- Generation Time: Apr 06, 2017 at 07:25 AM
 -- Server version: 5.6.33
 -- PHP Version: 7.0.12
 
@@ -103,9 +103,9 @@ CREATE TABLE tbl_user (
 --
 
 INSERT INTO tbl_user (user_id, user_fname, user_lname, user_name, user_pass, user_level, user_ip, user_logDate, user_logAttempts, user_lockoutDate, user_email, user_edit, user_createDate) VALUES
-(1, 'Kate', 'Spence', 'kspence', '5678', '1', '1', '2017-04-06 03:03:24', 0, '0000-00-00 00:00:00', 'katespence57@gmail.com', 'yes', '2017-03-24 00:00:00'),
+(1, 'Kate', 'Spence', 'kspence', '5678', '1', '1', '2017-04-06 11:20:12', 0, '0000-00-00 00:00:00', 'katespence57@gmail.com', 'yes', '2017-03-24 00:00:00'),
 (2, 'Lauren', 'Avery', 'lavery', '4321', '1', '2', '2017-03-25 06:21:01', 0, '0000-00-00 00:00:00', 'lauren.averyy@gmail.com', '', '2017-03-24 00:00:00'),
-(3, 'Keenan', 'Kiosis', 'kkiosis', '5678', '2', '3', '2017-03-25 19:41:06', 0, '0000-00-00 00:00:00', 'katespence57@gmail.com', 'yes', '2017-03-25 14:56:39');
+(4, 'FirstName', 'LastName', 'chantryadmin', 'blueheron', '2', '4', '2017-04-06 11:24:56', 0, '0000-00-00 00:00:00', 'katespence57@gmail.com', 'yes', '2017-04-06 07:24:01');
 
 -- --------------------------------------------------------
 
