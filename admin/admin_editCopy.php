@@ -24,9 +24,9 @@ if(isset($_POST['submit'])){
    <script src="https://use.fontawesome.com/d0bb73139e.js"></script>
   </head>
   <body>
-  <h1 class="hide">Admin Editing Page</h1>
+  <h1 class="hide">Admin Edit Site Copy Page</h1>
 <section class="container">
-	<h2 class="hide">Admin Editing Page</h2>
+	<h2 class="hide">Admin Edit Site Copy Page</h2>
 <form action="admin_editCopy.php" method="post">
   <section class="MHS row">
     <h3>Marine Heritage Society</h3>
@@ -83,6 +83,7 @@ per person<br>We recommend you call and book ahead to avoid disappointment.</p>
     echo $pop['copy_content'];
     ?>
    </textarea>
+</section>
 
 
 

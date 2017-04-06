@@ -30,10 +30,11 @@
     <script src="https://use.fontawesome.com/d0bb73139e.js"></script>
   </head>
   <body>
-  <h1 class="hide">Admin Home Page</h1>
+  <h1 class="hide">Admin Edit User Page</h1>
 	<section class="container">
 
 	<form class="adminLogForm" action="admin_editUser.php" method="post">
+	<h2 class="adminHeading">Edit User</h2>
 
 	 	<input class="formStyle adminFiled" type="text" placeholder="First Name" name="fname" value="<?php echo $popForm['user_fname']?>">
 
