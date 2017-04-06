@@ -34,11 +34,7 @@
 
 <body>
   <h1 class="hide">Administrative Login</h1>
-  <?php
-  if(!empty($message)) {
-    echo $message;
-  }
-  ?> 
+
   <section class="container">
   <h2 class="hide">Welcome to Chantry Island & Marine Heritage Society's admin page.</h2>
   
@@ -48,15 +44,16 @@
     <input class="formStyle adminFiled" type="text" name="username" value="" placeholder="User Name" required/>
 
     <input class="formStyle adminFiled" type="text" name="password" value="" placeholder="Password" required/> 
-    <?php
+    
+    <input class="sendBut small-8 small-pull-2 medium-6 medium-pull-3 columns" type="submit" name="submit" value="LOGIN">
+    
+  </form>
+  <?php
       if(!empty($message)) {
         echo $message;
       }
     ?>
     
-    <input class="sendBut small-8 small-pull-2 medium-6 medium-pull-3 columns" type="submit" name="submit" value="LOGIN">
-    
-  </form>
 
 
 <?php

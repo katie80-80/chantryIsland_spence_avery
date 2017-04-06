@@ -18,6 +18,7 @@ $(document).foundation();
 	donateTab = document.querySelector(".donateTab"),
 	flipOut = document.querySelector(".flipOut"),
 	closeDonate = document.querySelector(".closeDonate");
+	
 
 
 
@@ -47,28 +48,10 @@ $(document).foundation();
 		}, 100);
 		TweenMax.to(bookNowCon, 1.5, {width:"50px", height:"90px", y:bookHeadSpace/128, transformOrigin: "left top", delay:.2, ease: Power4.easeOut});
 	}
-	function bookPosition(){
-		var flipSpace = bookHeadSpace+16,
-		donateSpace = bookHeadSpace-150;
-    	bookNowCon.style.marginTop =  bookHeadSpace.toString() + "px";
-    	donateCon.style.marginTop =  donateSpace.toString() + "px";
-    	flipOut.style.marginTop =  donateSpace.toString() + "px";
-    	foldOut.style.marginTop =  flipSpace.toString() + "px";
-
-	}
-	function scrollPosition(){
-		var space = bookHeadSpace+window.scrollY,
-		flipSpace = bookHeadSpace+window.scrollY+16,
-		donateSpace = bookHeadSpace+window.scrollY-150;
-		//console.log("the space after scrolling" + space);
-		bookNowCon.style.marginTop =  space.toString() + "px";
-		donateCon.style.marginTop = donateSpace.toString() + "px";
-		flipOut.style.marginTop = donateSpace.toString() + "px";
-		foldOut.style.marginTop =  flipSpace.toString() + "px";
-	}
+	
 
 	function expandDonate(){
-		//console.log("expandDonate fried");
+		console.log("expandDonate fried");
 		TweenLite.to(donateTab, 1, {rotation:0, ease: Power4.easeOut});
 		TweenMax.to(donateCon, 1, {width:"500px", height:"50px", y:(-bookHeadSpace/4), transformOrigin: "left top", ease: Power4.easeOut});
 		TweenMax.to(flipOut, 1, {y:(-bookHeadSpace/4), ease: Power4.easeOut});
@@ -97,13 +80,8 @@ $(document).foundation();
 	burgButton.addEventListener("click", toggleBurger,false);
 	bookNowCon.addEventListener("click", expandBook, false);
 	closeBook.addEventListener("click", retractBook, false);
-	window.addEventListener("load", bookPosition, false);
-	window.addEventListener("scroll", scrollPosition, false);
 
 	donateCon.addEventListener("click", expandDonate, false);
 	closeDonate.addEventListener("click", retractDonate, false);
 
-
-	
-	
 	})();

@@ -1,5 +1,5 @@
 <?php
-  session_start();
+session_start();
   function confirm_logged_in(){
     if(!isset($_SESSION['users_creds'])){
       redirect_to("admin_login.php");
@@ -10,4 +10,4 @@
     session_destroy();
     redirect_to("../admin_login.php");
   }
- ?>
+?>

@@ -17,9 +17,11 @@
 	background-color: #3b846e;
 	height: 100px;
 	width: 50px;
-	position: absolute;
+	position: fixed;
+	margin-top: 25%;
 	animation: slide .8s 1;
-	animation-delay: .7s
+	animation-delay: .7s;
+	z-index: 99;
 }
 .donateTab{
 	font-family: 'Roboto', sans-serif;
@@ -31,7 +33,8 @@
 	z-index: 99;
 }
 .flipOut{
-	position: absolute;
+	position: fixed;
+	margin-top: 25%;
 	background-color: #3b846e;
 	width: 500px;
 	color: #fff;
@@ -61,7 +64,8 @@
 	background-color: #be2135;
 	height: 90px;
 	width: 50px;
-	position: absolute;
+	position: fixed;
+	margin-top: 45%;
 	animation: slide .8s 1;
 	animation-delay: .5s;
 	z-index: 99;
@@ -72,11 +76,14 @@
 	transform: rotate(-90deg);
 	color: #fff;
 	font-size: 1em;
-	padding-right: 5em;
+	/*padding-right: 1em;*/
+	padding-top: 1.75em;
+	margin-left: -25px;
 }
 
 .foldOut{
-	position: absolute;
+	position: fixed;
+	margin-top: 45%;
 	width: 600px;
 	z-index: 99;	
 }
@@ -84,6 +91,10 @@
 	color: #fff;
 	font-weight: bold;
 	z-index: 99;
+}
+.foldoutCal{
+	margin-left: 100px;
+	margin-top: 25px;
 }
 @keyframes slide{
 	0%{
@@ -197,7 +208,9 @@
 /*STATIC HEADER START*/
 .staticHeader{
 	background-image: url("../img/chantry_header.svg");
-	background-size: cover;
+	/*background-size: cover;*/
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 .logo{
 	margin-left: 5px;
@@ -419,7 +432,7 @@ p{
 .tourBut:hover{
 	color: #3d9278;
 }
- .tours p:first-of-type{
+ .bluText{
 	color: #3d9278 !important;
 	font-weight: bold;
 
@@ -443,17 +456,11 @@ p{
 
 
 /*OUR HISTORY START*/
-.videoPlaceholder{
-	background-color: #494244;
-	width: 80%;
-	height: 150px;
-	display: block;
-	margin: 0 auto;
-	margin-bottom: 30px;
-	text-align:center;
+
+
+.histVid{
+	padding-bottom: 50px;
 }
-
-
 
 
 
@@ -461,23 +468,15 @@ p{
 
 
 @media only screen and (min-width: 640px) {
-	.videoPlaceholder{
-		height: 250px;
-	}
+	
 	.history{
 		background-image: url(../img/woodBG.png);
 		background-size: cover;
 		margin-bottom: 30px;
 	}
-	.videoPlaceholder{
-		height: 300px;
-	}
+
 }
-@media only screen and (min-width: 940px){
-	.videoPlaceholder{
-		height: 500px;
-	}
-}
+
 
 /*OUR HISTORY END*/
 
@@ -748,6 +747,7 @@ p{
 }
 .thumbButton{
 	padding: 0;
+	filter: grayscale(100%);
 }
 .gallery{
 	padding-left: 10%;
@@ -940,6 +940,28 @@ p{
 }
 .levelList{
 	display: inherit;
+}
+
+.editArea{
+	resize: none;
+	height: 150px;
+	text-align: center;
+}
+.addPhotoBut{
+	background-color: #be2135;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	color: #fff;
+	margin-top: 15px;
+	text-align: center;
+}
+.adminInput{
+	display: inline;
+	width: auto;
+}
+
+.adminHeading{
+	margin-top: 10px;
 }
 
 /*ADMIN END*/

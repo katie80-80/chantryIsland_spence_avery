@@ -56,7 +56,7 @@
 
 
 <?php
-  include("../includes/adminFooter.html");
+include("../includes/adminFooter.html");
 ?>
 
 

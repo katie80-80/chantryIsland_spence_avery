@@ -1,5 +1,5 @@
-<?php 
-	function getUser($id){
+<?php
+function getUser($id){
 		require_once("connect.php");
 		//create query 
 		$userstring = "SELECT * FROM tbl_user WHERE user_id = {$id}";
@@ -33,7 +33,7 @@
 	$randomPassword = generatePassword(8);
 	$ip = 0;
 	$userstring = "INSERT INTO tbl_user VALUES(NULL,'{$fname}', '{$lname}', '{$username}', '{$randomPassword}', '{$level}', '{$ip}', '1000-01-01 00:00:00', '0', '1000-01-01 00:00:00', '{$email}', 'no', '$realDate')";
-	$emailBody = "You have been made a web adminiastrator of chantryisland.com! Your username is: {$username}\n\n your password is: {$randomPassword}\n\n. Please go to http://localhost:8888/chantryIsland_spence_avery/admin/admin_login.php. You must change your password within 48 hours or your account will be deleted." ;
+	$emailBody = "You have been made a web adminiistrator of chantryisland.com! Your username is: {$username}\n\n your password is: {$randomPassword}\n\n. Please go to http://localhost:8888/chantryIsland_spence_avery/admin/admin_login.php. You must change your password within 48 hours or your account will be deleted." ;
 	//echo $userstring;
 	$userquery = mysqli_query($link, $userstring);
 	if(isset($userquery)){
@@ -62,8 +62,4 @@ function editUser($id, $fname, $lname, $username, $password, $email){
 	}
 
 	mysqli_close($link);
-}
-
-
-
-?>
+}?>

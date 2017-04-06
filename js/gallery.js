@@ -1,4 +1,3 @@
-
 $(document).foundation();
 // JavaScript Document
 
@@ -65,7 +64,6 @@ $(document).foundation();
 
 		targetImg++;
 		imgChange();
-
 	}
 	function lastPic(){
 
@@ -86,6 +84,10 @@ $(document).foundation();
 				item.classList.add('hide');
 			});
 
+	}
+	function deleteImg(){
+		console.log("deleteImg fired");
+		alert("Are you sure you want to delete this photo?");
 	}
 
 

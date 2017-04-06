@@ -1,7 +1,6 @@
 <?php
 require_once("phpscripts/init.php");
-//confirm_logged_in(); // uncomment for checking css
- ?>
+?>
  <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -23,13 +22,13 @@ require_once("phpscripts/init.php");
 
 <div class="row">
 <h3>Edit Pages</h3>
-  <a class="adminPgBtn small-12 medium-3 medium-push-3 columns" href="#">HOME</a>
-  <a class="adminPgBtn small-12 medium-3 medium-push-3 end columns" href="#">TOURS</a>
+  <a class="adminPgBtn small-12 medium-3 medium-push-3 columns" href="admin_editCopy.php">SITE COPY</a>
+  <a class="adminPgBtn small-12 medium-3 medium-push-3 end columns" href="admin_editVolunteers.php">VOLUNTEERS</a>
 </div>
 
 <div class="row">
-  <a class="adminPgBtn small-12 medium-3 medium-push-3 columns" href="#">VOLUNTEERS</a>
-  <a class="adminPgBtn small-12 medium-3 medium-push-3 end columns" href="#">CONTACT</a>
+  <a class="adminPgBtn small-12 medium-3 medium-push-3 columns" href="admin_editPhotos.php">PHOTOS</a>
+  <a class="adminPgBtn small-12 medium-3 medium-push-3 end columns" href="https://calendar.google.com/calendar/render?tab=oc&pli=1#main_7" target="_blank">CALENDAR</a>
 </div>
 
 <div class="row">
@@ -39,7 +38,7 @@ require_once("phpscripts/init.php");
 </div>
 
 <?php
-  include("../includes/adminFooter.html");
+include("../includes/adminFooter.html");
 ?>
 
 

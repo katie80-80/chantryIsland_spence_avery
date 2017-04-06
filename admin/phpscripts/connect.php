@@ -1,5 +1,4 @@
 <?php
-	// Set up connection credentials
 	$user = "root";
 	$pass = "root";
 	$url = "localhost";

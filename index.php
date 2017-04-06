@@ -4,21 +4,13 @@
     error_reporting(E_ALL);
 
   require_once('admin/phpscripts/init.php');
-
-    $tbl = "tbl_photos";
-    $getPhotos = getAll($tbl);
-
-if(isset($_GET['filter'])) {
-    $tblC = "tbl_copy";
+  if(isset($_GET['filter'])){
     $filter = $_GET['filter'];
-    $getHomeCopyA = getSome($tblC, $filter);
-    $getHomeCopyB = getSomeMore($tblC, $filter);
-}else{
-    $tblC = "tbl_copy";
-    $filter = "home";
-    $getHomeCopyA = getSome($tblC, $filter);
-    $getHomeCopyB = getSomeMore($tblC, $filter);
-}
+  }else{
+    $filter = 'home';
+  }
+  $tbl = "tbl_photos";
+  $getPhotos = getAll($tbl);
 ?>
 
 
@@ -36,27 +28,25 @@ if(isset($_GET['filter'])) {
   </head>
   <body>
 	  <h1 class="hide">Home Page</h1>
-<section class="container">
-	<h2 class="hide">Welcome to Chantry Island & Marine Heritage Society's home page.</h2>
-
-<?php 
+    <?php 
 
 include("includes/header.html");
 
  ?>
+<section class="container">
+	<h2 class="hide">Welcome to Chantry Island &amp; Marine Heritage Society's home page.</h2>
+
+
 
   <section class="MHS row">
-
-<?php 
-
-  if(!is_string($getHomeCopyA)){
-    while($row = mysqli_fetch_array($getHomeCopyA)){
-      echo "<h3>{$row['copy_heading']}</h3>";
-      echo "<p class=\"small-12 medium-10 medium-pull-1 columns\">{$row['copy_content']}</p>";
-    }
-  }
-
- ?>
+    <h3>Marine Heritage Society</h3>
+    <p class="small-12 medium-10 medium-pull-1 columns">
+    <?php
+    $id = 7;
+    $pop = getCopy($filter, $id);
+    echo $pop['copy_content'];
+    ?>
+    </p>
 
   
   </section>
@@ -68,24 +58,21 @@ include("includes/header.html");
 	  <div class="small-4 columns"><img class="icons" src="img/birdicon.svg" alt="Charming Boat"></div>
   </section>
 
-  <section class="tours row">
-  <div class="small-12 medium-10 medium-push-1 columns">
+  <section class="row">
+  <h3>Beautiful Chantry Island</h3>
+  <div class="small-12 medium-10 medium-pull-1 columns">
+    <p>Chantry Island is located on Lake Huron, just over a mile southwest of the Saugeen River mouth in Southampton, Ontario. On the island is a majestic Imperial Lighthouse built in the mid 1800’s, the Keeper’s quarters, and a boat house.</p> 
 
-<?php 
+    <p>The island varies in size depending on the level of Lake Huron. Today, with a low lake level Chantry Island is about
+    <?php
+    $id = 2;
+    $pop = getCopy($filter, $id);
+    echo $pop['copy_content'];
+    ?> 
+    . In 1986 when the water level was at the highest of the century, the island was only about 10 acres, causing trees on the west, north and south sides to drown.</p>
 
-  if(!is_string($getHomeCopyB)){
-    while($row = mysqli_fetch_array($getHomeCopyB)){
+    <p>Chantry Island is a glacial moraine and consists of stone above the water and beneath extending a mile north and a mile south of the island. These underwater shoals of massive granite boulders have made this area one of the most treacherous in the Great Lakes from the 1800’s and early – mid 1900’s. There are over 50 known shipwrecks around the island.<br><a class="tourBut" href="tours.php">MORE TOUR INFORMATION HERE</a></p>
 
-      echo "<h3>{$row['copy_heading']}</h3>";
-
-      echo "<p>{$row['copy_content']}</p>";
-
-    }
-  }else{
-    echo "<p>{$getCopy}</p>";
-  }
-
- ?>
 
   </div>
 
@@ -93,8 +80,10 @@ include("includes/header.html");
 
   <section class="history row">
     <h3>Our History</h3>
-	  <h3 class="hide">Video about our history.</h3>
-	  <div class="videoPlaceholder"><p>This box is where our video will be located. We have some awesome things in the works for this and we are excited for you to see it!</p></div>
+    <video controls class="histVid small-12 medium-10 medium-pull-1 columns">
+      <source src="video/ChantryVid_final.mp4" type="video/mp4">
+    </video>
+	  <!-- <div class="videoPlaceholder"></div> -->
   </section>
 
   <section class="row">
