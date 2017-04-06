@@ -71,7 +71,7 @@ include("includes/header.html");
     ?> 
     . In 1986 when the water level was at the highest of the century, the island was only about 10 acres, causing trees on the west, north and south sides to drown.</p>
 
-    <p>Chantry Island is a glacial moraine and consists of stone above the water and beneath extending a mile north and a mile south of the island. These underwater shoals of massive granite boulders have made this area one of the most treacherous in the Great Lakes from the 1800’s and early – mid 1900’s. There are over 50 known shipwrecks around the island.<br><a class="tourBut" href="tours.php">MORE TOUR INFORMATION HERE</a></p>
+    <p>Chantry Island is a glacial moraine and consists of stone above the water and beneath extending a mile north and a mile south of the island. These underwater shoals of massive granite boulders have made this area one of the most treacherous in the Great Lakes from the 1800’s and early – mid 1900’s. There are over 50 known shipwrecks around the island.<br><a class="tourBut" href="tours.php?filter=tours">MORE TOUR INFORMATION HERE</a></p>
 
 
   </div>
